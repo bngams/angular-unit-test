@@ -28,7 +28,7 @@ describe("QuotesComponent", () => {
     TestBed.configureTestingModule({
       imports: [FormsModule],
       declarations: [QuotesComponent],
-      providers: [ {provide: QuoteService, useValue: quoteServiceStub}]
+      // providers: [ {provide: QuoteService, useValue: quoteServiceStub}]
     });
   });
 
@@ -78,15 +78,14 @@ describe("QuotesComponent", () => {
   });
 
   it("should remove post upon card click", () => {
-    component.quoteText = "This is a fresh post";
+    component.quoteText = "This is a fresh post 2";
     fixture.detectChanges();
-
-    fixture.debugElement
-      .query(By.css(".row"))
-      .query(By.css(".card"))
-      .triggerEventHandler("click", null);
+    fixture.debugElement.query(By.css("button")).nativeElement.click();
+    fixture.detectChanges();
+    fixture.debugElement.query(By.css(".list-card")).nativeElement.click();
+    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.innerHTML).toContain("This is a fresh post");
+    expect(compiled.innerHTML).not.toContain("This is a fresh post");
   });
 
   it("should fetch data asynchronously", async () => {
