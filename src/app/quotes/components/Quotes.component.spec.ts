@@ -47,22 +47,13 @@ describe("QuotesComponent", () => {
   });
 
   it("should enable button when textArea is not empty", () => {
-    component.quoteText = "I love this test";
-    fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css("button"));
-    expect(button.nativeElement.disabled).toBeFalsy();
+    // complete implementation here
+    expect(component).toBeTruthy();
   });
 
   it("should remove post upon card click", () => {
-    component.quoteText = "This is a fresh post";
-    fixture.detectChanges();
-
-    fixture.debugElement
-      .query(By.css(".row"))
-      .query(By.css(".card"))
-      .triggerEventHandler("click", null);
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.innerHTML).toContain("This is a fresh post");
+    // complete implementation here
+    expect(component).toBeTruthy();
   });
 
   it("should fetch data asynchronously", async () => {
