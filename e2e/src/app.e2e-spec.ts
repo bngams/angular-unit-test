@@ -7,8 +7,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display quote message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to angular-unit-test!');
+    expect(page.getParagraphText()).toEqual('What Quote is on your mind ?');
   });
 });
