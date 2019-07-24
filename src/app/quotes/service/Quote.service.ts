@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { QuoteModel } from "../model/QuoteModel";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: "root"
@@ -9,7 +11,7 @@ export class QuoteService {
 
   private daysOfTheWeeks = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   addNewQuote(quote: String) {
     const date = new Date();
@@ -35,5 +37,9 @@ export class QuoteService {
         resolve([new QuoteModel("I love unit testing", "Mon 4, 2018")]);
       }, 2000);
     });
+  }
+
+  listQuotes() {
+    return this.http.get('http://jsonplaceholder.typicode.com/todos');
   }
 }

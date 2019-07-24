@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { QuoteService } from "../service/Quote.service";
 import { QuoteModel } from "../model/QuoteModel";
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 @Component({
   selector: "app-Quotes",

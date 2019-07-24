@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { QuotesComponent } from "./Quotes.component";
 import { QuoteService } from "../service/Quote.service";
 import { QuoteModel } from "../model/QuoteModel";
@@ -26,7 +26,7 @@ describe("QuotesComponent", () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule],
+      imports: [FormsModule, HttpClientTestingModule],
       declarations: [QuotesComponent],
       // providers: [ {provide: QuoteService, useValue: quoteServiceStub}]
     });
@@ -78,7 +78,7 @@ describe("QuotesComponent", () => {
   });
 
   it("should remove post upon card click", () => {
-    component.quoteText = "This is a fresh post 2";
+    component.quoteText = "This is a fresh post";
     fixture.detectChanges();
     fixture.debugElement.query(By.css("button")).nativeElement.click();
     fixture.detectChanges();
