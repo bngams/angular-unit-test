@@ -2,14 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
-If you have an error while launching ng e2e
+If you have an error while launching ng e2e:
 
+You can use a different version of Node.js. For windows you can install a specific version of node using nvmw
 
-You can use a different version of Node.js
-For windows you can install a specific version of node using nvmw
 npm install -g nvmw
+
 nvmw install v10.14.2
+
 nvmw use v10.14.2
+
 
 ## Development server
 
